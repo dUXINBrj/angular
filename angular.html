@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="js/angular.js" ></script>
+</head>
+<body>
+Your name: <input type="text" ng-model="yourname" placeholder="World">
+<hr>
+Hello {{yourname || 'World'}}!
+
+<!--<div ng-app="" ng-init="quantity=2;cost=5">
+	<p>总价: <span ng-bind="quantity*cost"></span></p>
+</div>-->
+<!--<br />
+<div ng-app="" ng-init="name=['du','ban','luo']">
+	<p>ng-repeat</p>
+	<ul>
+		<li ng-repeat="x in name">
+			{{x}}
+		</li>
+	</ul>
+</div>-->
+<!--<br />
+<div ng-app="myApp">
+<runoob-directive></runoob-directive>
+</div>
+<br />-->
+<!--<div ng-app="secondApp" ng-controller="myCtrl" >
+	姓名：<input ng-model="name" />
+	<h1>你输入了：{{name}}</h1>
+</div>-->
+<!--<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+</form>-->
+
+<!--<div ng-app="fliter" ng-controller="nameCtrl">
+	<p><input type="text" ng-model="test"></p>
+	<ul>
+		<li ng-repeat="x in names | filter:test | orderBy:'country' ">
+			{{(x.name | uppercase) + ',' + x.country}}
+		</li>
+	</ul>
+</div>-->
+<div ng-app="myApp3" ng-controller="myCtrl">
+	<p>选择网站：</p>
+	<select ng-model="selectedSite" ng-options="x.site for x in sites">
+	</select>
+	<h2>你选择的是：{{selectedSite.site}}</h2>
+	<h3>网址是：{{selectedSite.url}}</h3>
+</div>
+</body>
+<script type="text/javascript" src="js/namesContrller.js" ></script>
+<script>
+//var app = angular.module("myApp", []);
+//app.directive("runoobDirective", function() {
+//  return {
+//      template : "<h1>自定义指令!</h1>"
+//  };
+//});
+// 
+//var app2 = angular.module("secondApp",[]);
+//app2.controller('myCtrl',function($scope){
+//	$scope.name="John Doe";
+//});
+var app = angular.module('myApp3',[]);
+app.controller('myCtrl',function($scope){
+	$scope.sites=[
+	{site:'google',url:'google.com'},
+	{site:'baidu',url:'baidu.com'},
+	{site:'yahoo',url:'yahoo.com'}
+	];
+});
+</script>
+</html>

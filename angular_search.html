@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>angular_search</title>
+	<script type="text/javascript" src="js/angular.js" ></script>
+</head>
+<body>
+<div>
+	<input type="text" ng-model="greeting.text" />
+	
+	<p>{{greeting.text}},Angular</p>
+</div>
+</body>
+<script>
+var myModule = angular.module("HelloAngular",[]);//定义模块
+myModule.controller("helloAngular",['$scope',//控制器
+	function HelloAnfular($scope){					//注入$scope
+		$scope.greeting={
+			text:'Hello'
+		};
+	}
+]);
+</script>
+</html>

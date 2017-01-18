@@ -1,0 +1,8 @@
+工具：
+
+Angular
+核心：一切都围绕模块；
+ng-app：angular从这个位置开始，在任意单页应用中只能出现一次；
+{{}}:表示取值；
+先定义一个模块（ eg: var myModule = angular.module(“MyModule”,[]); ）
+再使用已经定义的模块去调用angular的方法 如:controller,directive;
